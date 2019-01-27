@@ -1,0 +1,30 @@
+<h3>Filter books:
+
+  <button (click)="filter()">List all books</button>
+  <button class="children" (click)="filter('Cook books')">Cook Books</button>
+  <button class="cook" (click)="filter('Children boos')">Children Books</button>
+  <button class="money" (click)="filter('Business books')">Business & Money</button>
+</h3>
+
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Price</th>
+    <th>Category</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor='let item of books; let i = index'>
+    <td>{{i + 1}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.author}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.category}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
